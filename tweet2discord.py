@@ -12,7 +12,7 @@ consumer_key = os.getenv('tweeter_consumer_key')
 consumer_secret =  os.getenv('tweeter_consumer_secret')
 access_key = os.getenv('tweeter_access_key')
 access_secret = os.getenv('tweeter_access_secret')
-discord = os.getenv('discord_url')
+discordurl = os.getenv('discord_url')
 
 # Create your dictionary class  
 class my_dictionary(dict):  
@@ -40,15 +40,15 @@ def get_tweets(username):
         for i in [1,2,3]:
             tweets+= api.user_timeline(screen_name=username, page = i)
 
-        ##set the date to last 24hours
+        ##set the datetime to last 2min
         date=datetime.utcnow()- timedelta(minutes=2)
        
         for tweet in tweets:
-        # if the tweet was created in last 24hours and contains $ sign for ticker
+        # if the tweet was created in last 2min, publish in discord
             if tweet.created_at > date:
                 tweet_date= tweet.created_at
                 data = str(tweet_date.replace(tzinfo=timezone.utc).astimezone(tz=None).time())+" "+'User: '+tweet.user.screen_name+ " " + tweet.text
-                webhook = DiscordWebhook(url=discord, content=data)
+                webhook = DiscordWebhook(url=discordurl, content=data)
                 response = webhook.execute()
                 print(response)
                 time.sleep(4)
