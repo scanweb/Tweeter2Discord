@@ -8,10 +8,10 @@ import time
 load_dotenv()
 # Fill the X's with the credentials obtained by  
 # following the above mentioned procedure. 
-consumer_key = os.getenv('tweeter_consumer_key') #"0pqgY4DaVr4hac4e0d5jSjSGF" 
-consumer_secret =  os.getenv('tweeter_consumer_secret')#"3fxXMUABCGe2Zx53w4c2z0bFuqdSF3hcUmsWEJBFuEWRiAcl9P"
-access_key = os.getenv('tweeter_access_key') #"1226609363290333184-sMumOUkkptoc6nfv5QVMJ9rxp7mNBU"
-access_secret = os.getenv('tweeter_access_secret') #"9pIPWogFfMMsCR5wKtF3tfT0E33ALhUGQU2wf0EWzgmn7"
+consumer_key = os.getenv('tweeter_consumer_key')
+consumer_secret =  os.getenv('tweeter_consumer_secret')
+access_key = os.getenv('tweeter_access_key')
+access_secret = os.getenv('tweeter_access_secret')
 discord = os.getenv('discord_url')
 
 # Create your dictionary class  
