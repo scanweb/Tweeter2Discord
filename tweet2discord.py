@@ -14,17 +14,6 @@ access_key = os.getenv('tweeter_access_key')
 access_secret = os.getenv('tweeter_access_secret')
 discordurl = os.getenv('discord_url')
 
-# Create your dictionary class  
-class my_dictionary(dict):  
-    
-            # __init__ function  
-            def __init__(self):  
-                self = dict()  
-                
-            # Function to add key:value  
-            def add(self, key, value):  
-                self[key] = value
-
 def get_tweets(username): 
         
         load_dotenv()
